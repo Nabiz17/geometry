@@ -33,22 +33,29 @@ public class Main {
     int a = Integer.parseInt(coordinates.substring(0, sepIndex));
     int b = Integer.parseInt(coordinates.substring(sepIndex + 1).trim());
 
-    if ((x - a)*(x - a) + (y - b)*(y - b) >= r*r) {
+    if ((x - a) * (x - a) + (y - b) * (y - b) >= r * r) {
       System.out.println("точка не находится внутри окружности");
     } else {
       System.out.println("точка находится внутри окружности");
     }
-   if ((a > 0) && (b > 0)) {
+    if ((a > 0) && (b > 0)) {
       System.out.println("точка находится в 1 четверти системы координат");
-    } else if ((a < 0) && (b > 0)){
-     System.out.println("точка находится в 2 четверти системы координат");
-   } else if ((a < 0) && (b < 0)){
-     System.out.println("точка находится в 3 четверти системы координат");
-   } else if ((a > 0) && (b < 0)){
-     System.out.println("точка находится в 4 четверти системы координат");
-    } else {
-     System.out.println("точка находится в центре системы координат");
-   }
-
+    } else if ((a < 0) && (b > 0)) {
+      System.out.println("точка находится в 2 четверти системы координат");
+    } else if ((a < 0) && (b < 0)) {
+      System.out.println("точка находится в 3 четверти системы координат");
+    } else if ((a > 0) && (b < 0)) {
+      System.out.println("точка находится в 4 четверти системы координат");
+    } else if ((a == 0) && (b > 0)) {
+      System.out.println("точка лежит на оси 'b' и принадлежит 1 и 2 четвертям системы координат");
+    } else if ((a == 0) && (b < 0)) {
+      System.out.println("точка лежит на оси 'b' и принадлежит 3 и 4 четвертям системы координат");
+    } else if ((a > 0) && (b == 0)) {
+      System.out.println("точка лежит на оси 'a' и принадлежит 1 и 4 четвертям системы координат");
+    } else if ((a < 0) && (b == 0)) {
+      System.out.println("точка лежит на оси 'a' и принадлежит 2 и 3 четвертям системы координат");
+       } else {
+      System.out.println("точка лежит в центре системы координат");
+    }
   }
 }
